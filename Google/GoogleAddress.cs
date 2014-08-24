@@ -9,7 +9,7 @@ namespace Geocoding.Google
 		readonly GoogleAddressComponent[] components;
 		readonly bool isPartialMatch;
 		readonly GoogleViewport viewport;
-      readonly GoogleBounds bounds;
+		readonly Bounds bounds;
 
 		public GoogleAddressType Type
 		{
@@ -31,17 +31,17 @@ namespace Geocoding.Google
 			get { return viewport; }
 		}
 
-      public GoogleBounds Bounds
-      {
-         get { return bounds; }
-      }
+		public Bounds Bounds
+		{
+			get { return bounds; }
+		}
 
 		public GoogleAddressComponent this[GoogleAddressType type]
 		{
 			get { return Components.FirstOrDefault(c => c.Types.Contains(type)); }
 		}
 
-		public GoogleAddress(GoogleAddressType type, string formattedAddress, GoogleAddressComponent[] components, Location coordinates, GoogleViewport viewport, GoogleBounds bounds, bool isPartialMatch)
+		public GoogleAddress(GoogleAddressType type, string formattedAddress, GoogleAddressComponent[] components, Location coordinates, GoogleViewport viewport, Bounds bounds, bool isPartialMatch)
 			: base(formattedAddress, coordinates, "Google")
 		{
 			if (components == null)
@@ -54,7 +54,7 @@ namespace Geocoding.Google
 			this.components = components;
 			this.isPartialMatch = isPartialMatch;
 			this.viewport = viewport;
-		   this.bounds = bounds;
+			this.bounds = bounds;
 		}
 	}
 }
