@@ -13,7 +13,7 @@
     }
   },
   "dependencies": {
-    "Core": "1.0.0-*",
+    "Geocoding.Core": "1.0.0-*",
     "Microsoft.CSharp": "4.0.1-beta-23516",
     "Newtonsoft.Json": "8.0.3",
     "System.Collections": "4.0.11-beta-23516",

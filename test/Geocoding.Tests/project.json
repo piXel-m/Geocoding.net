@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "Geocoding.Core": "1.0.0-*",
+    "Geocoding.GeoNames": "1.0.0-*",
     "Geocoding.Google": "1.0.0-*",
     "Geocoding.MapQuest": "1.0.0-*",
     "Geocoding.Microsoft": "1.0.0-*",
