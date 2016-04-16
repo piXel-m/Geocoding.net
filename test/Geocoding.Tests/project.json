@@ -18,6 +18,7 @@
     "Geocoding.Google": "1.0.0-*",
     "Geocoding.MapQuest": "1.0.0-*",
     "Geocoding.Microsoft": "1.0.0-*",
+    "Geocoding.Nominatim": "1.0.0-*",
     "Geocoding.Yahoo": "1.0.0-*",
     "Microsoft.CSharp": "4.0.1-beta-23516",
     "Microsoft.Framework.Configuration": "1.0.0-rc1-15678",

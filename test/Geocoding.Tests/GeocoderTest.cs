@@ -47,7 +47,7 @@ namespace Geocoding.Tests
 		{
 			CultureInfo.CurrentCulture = new CultureInfo("en-us");
 
-            Address[] addresses = geocoder.Geocode("24 sussex drive ottawa, ontario").ToArray();
+			Address[] addresses = geocoder.Geocode("24 sussex drive ottawa, ontario").ToArray();
 			addresses[0].AssertCanadianPrimeMinister();
 		}
 
@@ -58,7 +58,7 @@ namespace Geocoding.Tests
 		{
 			CultureInfo.CurrentCulture = new CultureInfo("en-us");
 
-            Address[] addresses = geocoder.ReverseGeocode(38.8976777, -77.036517).ToArray();
+			Address[] addresses = geocoder.ReverseGeocode(38.8976777, -77.036517).ToArray();
 			addresses[0].AssertWhiteHouseArea();
 		}
 
