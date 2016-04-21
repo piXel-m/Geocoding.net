@@ -3,6 +3,8 @@ using Geocoding.MapQuest;
 using Xunit;
 
 using Microsoft.Framework.Configuration;
+using System.Linq;
+
 namespace Geocoding.Tests
 {
     public class MapQuestGeocoderTest : GeocoderTest
@@ -21,5 +23,22 @@ namespace Geocoding.Tests
 		{
 			base.CanGeocodeWithSpecialCharacters(address);
 		}
+
+        [Theory]
+        [InlineData("Frankfurt")]
+        public void CanGeocodeWithBoundingBox(string address)
+        {
+            var mapquest = (geocoder as MapQuestGeocoder);
+            mapquest.BoundingBox = new[]
+            {
+                52.4270f,14.3584f,
+                52.2365f, 14.7018f
+            };
+
+            Address[] addresses = mapquest.Geocode(address).ToArray();
+            addresses[0].AssertFrankfurtOder();
+
+            mapquest.BoundingBox = null;
+        }
 	}
 }

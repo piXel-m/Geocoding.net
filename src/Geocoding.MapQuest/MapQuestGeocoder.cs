@@ -36,6 +36,8 @@ namespace Geocoding.MapQuest
 			this.key = key;
 		}
 
+	    public float[] BoundingBox { get; set; }
+
 		private IEnumerable<Address> HandleSingleResponse(MapQuestResponse res)
 		{
 			if (res != null && !res.Results.IsNullOrEmpty())
@@ -69,7 +71,7 @@ namespace Geocoding.MapQuest
 			if (string.IsNullOrWhiteSpace(address))
 				throw new ArgumentException("address can not be null or empty!");
 
-			var f = new GeocodeRequest(key, address) { UseOSM = this.UseOSM };
+			var f = new GeocodeRequest(key, address) { UseOSM = this.UseOSM, BoundingBox = BoundingBox};
 			MapQuestResponse res = Execute(f);
 			return HandleSingleResponse(res);
 		}
