@@ -6,7 +6,7 @@ namespace Geocoding.Tests
 {
 	public abstract class GeocoderTest
 	{
-		readonly IGeocoder geocoder;
+		protected readonly IGeocoder geocoder;
 
 		public GeocoderTest()
 		{

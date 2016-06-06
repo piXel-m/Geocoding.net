@@ -52,5 +52,12 @@ namespace Geocoding.Tests
 			Assert.True(adr.Contains("10557"));
 			Assert.True(adr.Contains("deutschland") || adr.Contains("germany"));
 		}
+
+		public static void AssertFrankfurtOder(this Address address)
+		{
+			string adr = address.FormattedAddress.ToLower();
+			Assert.True(adr.Contains("Frankfurt"));
+			Assert.True(adr.Contains("Oder"));
+		}
 	}
 }
