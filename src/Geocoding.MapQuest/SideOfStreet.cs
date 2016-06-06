@@ -1,20 +1,26 @@
 ﻿namespace Geocoding.MapQuest
 {
-	public enum SideOfStreet
-	{
-		/// <summary>
-		/// None: default
-		/// </summary>
-		N,
+    public enum SideOfStreet
+    {
+        /// <summary>
+        /// None: default
+        /// </summary>
+        N,
 
-		/// <summary>
-		/// Left
-		/// </summary>
-		L,
+        /// <summary>
+        /// Left
+        /// </summary>
+        L,
 
-		/// <summary>
-		/// Right
-		/// </summary>
-		R,
-	}
+        /// <summary>
+        /// Right
+        /// </summary>
+        R,
+
+
+        /// <summary>
+        /// Middle
+        /// </summary>
+        M
+    }
 }
