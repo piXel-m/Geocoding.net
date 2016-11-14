@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using Geocoding.MapQuest;
 using Xunit;
 
-using Microsoft.Framework.Configuration;
+using Microsoft.Extensions.Configuration;
 using System.Linq;
 
 namespace Geocoding.Tests
@@ -11,7 +12,10 @@ namespace Geocoding.Tests
 	{
 		protected override IGeocoder CreateGeocoder()
 		{
-			var config = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+			var config = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json")
+                .Build();
 			string k = config["AppSettings:mapQuestKey"];
 			return new MapQuestGeocoder(k);
 		}

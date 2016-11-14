@@ -1,6 +1,7 @@
-﻿using Geocoding.Microsoft;
-using Microsoft.Framework.Configuration;
+﻿using System.IO;
+using Geocoding.Microsoft;
 using System.Linq;
+using Microsoft.Extensions.Configuration;
 using Xunit;
 
 namespace Geocoding.Tests
@@ -11,7 +12,10 @@ namespace Geocoding.Tests
 
 		protected override IGeocoder CreateGeocoder()
 		{
-			var config = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+			var config = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json")
+                .Build();
 			geoCoder = new BingMapsGeocoder(config["AppSettings:bingMapsKey"]);
 			return geoCoder;
 		}

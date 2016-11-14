@@ -1,5 +1,6 @@
-﻿using Geocoding.Yahoo;
-using Microsoft.Framework.Configuration;
+﻿using System.IO;
+using Geocoding.Yahoo;
+using Microsoft.Extensions.Configuration;
 using Xunit;
 
 namespace Geocoding.Tests
@@ -8,7 +9,10 @@ namespace Geocoding.Tests
 	{
 		protected override IGeocoder CreateGeocoder()
 		{
-			var config = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+			var config = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json")
+                .Build();
 			return new YahooGeocoder(
 				config["AppSettings:yahooConsumerKey"],
 				config["AppSettings:yahooConsumerSecret"]

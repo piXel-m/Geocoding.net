@@ -1,4 +1,5 @@
-﻿using Microsoft.Framework.Configuration;
+﻿using System.IO;
+using Microsoft.Extensions.Configuration;
 
 namespace Geocoding.Tests
 {
@@ -6,7 +7,10 @@ namespace Geocoding.Tests
 	{
 		protected override IBatchGeocoder CreateBatchGeocoder()
 		{
-            var config = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+            var config = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json")
+                .Build();
             string k = config["AppSettings:mapQuestKey"];
 			return new MapQuest.MapQuestGeocoder(k);
 		}

@@ -1,27 +1,16 @@
 {
-  "version": "3.4.0-core",
+  "version": "3.4.1-core",
   "description": "Microsoft Class Library",
   "authors": [ "platzer.m" ],
-  "tags": [ "" ],
-  "projectUrl": "",
-  "licenseUrl": "",
+
+  "dependencies": {
+    "NETStandard.Library": "1.6.0",
+    "Geocoding.Core": "3.4.1-core",
+    "System.Net.Requests": "4.0.11",
+    "System.Runtime.Serialization.Json": "4.3.0-preview1-24530-04"
+  },
 
   "frameworks": {
-    "dnxcore50": {
-      "dependencies": {
-      }
-    }
-  },
-  "dependencies": {
-    "Geocoding.Core": "3.4.0-core",
-    "Microsoft.CSharp": "4.0.1-beta-23516",
-    "Newtonsoft.Json": "8.0.3",
-    "System.Collections": "4.0.11-beta-23516",
-    "System.Linq": "4.0.1-beta-23516",
-    "System.Net.Requests": "4.0.11-rc2-23826",
-    "System.Runtime": "4.0.21-beta-23516",
-    "System.Runtime.Serialization.Json": "4.0.0-beta-23109",
-    "System.Runtime.Serialization.Primitives": "4.1.0-beta-23516",
-    "System.Threading": "4.0.11-beta-23516"
+    "netstandard1.6": {}
   }
 }
